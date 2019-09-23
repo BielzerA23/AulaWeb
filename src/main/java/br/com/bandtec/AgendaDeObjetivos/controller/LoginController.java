@@ -28,11 +28,11 @@ public class LoginController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<String> fazerLogin(@RequestBody Credenciais credenciais) {
-		if(todosUsuarios.existeUsuario(credenciais.getLogin(), credenciais.getSenha()) == null){
+		if(todosUsuarios.existeUsuario(credenciais) == null){
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login não encontrado");
-		}else {
-			return ResponseEntity.ok("sucesso");
 		}
+			return ResponseEntity.ok("sucesso");
+		
 	}
 		
 		

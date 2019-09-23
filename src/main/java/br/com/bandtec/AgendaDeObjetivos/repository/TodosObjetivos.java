@@ -16,6 +16,7 @@ public interface TodosObjetivos extends JpaRepository<Objetivo, Long> {
 	@Query("select o from Objetivo o where o.dataMaximaParaExecucao <= :data")
 	public List<Objetivo> ate(@Param("data")LocalDate data);
 	
+	
 //	private final List<Objetivo> objetivos;
 	
 //	public TodosObjetivos() {

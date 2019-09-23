@@ -1,5 +1,8 @@
 package br.com.bandtec.AgendaDeObjetivos.domain;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Credenciais {
 	private String login;
 	private String senha;

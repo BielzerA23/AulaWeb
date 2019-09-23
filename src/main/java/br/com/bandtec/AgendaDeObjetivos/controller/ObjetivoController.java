@@ -41,4 +41,8 @@ public class ObjetivoController {
 		return ResponseEntity.ok(objetivoPorData);
 	}
 	
+	@GetMapping("/objetivos")
+	public ResponseEntity<List<Objetivo>> buscarTodosObjetivos(){
+		return ResponseEntity.ok(todosobjetivos.findAll());
+	}
 }

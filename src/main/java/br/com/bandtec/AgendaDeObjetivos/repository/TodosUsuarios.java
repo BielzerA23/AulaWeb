@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import br.com.bandtec.AgendaDeObjetivos.domain.Credenciais;
 import br.com.bandtec.AgendaDeObjetivos.domain.Objetivo;
 import br.com.bandtec.AgendaDeObjetivos.domain.Usuario;
 
@@ -15,7 +16,7 @@ import br.com.bandtec.AgendaDeObjetivos.domain.Usuario;
 @Repository
 public interface TodosUsuarios extends JpaRepository<Usuario, Long> {
 	
-	@Query("select u from usuario u where u.login = :login and u.senha = :senha")
-	Usuario existeUsuario(@Param("login")String login, @Param("senha")String senha);
+	@Query("select u from Usuario u where u.credenciais = :credenciais")
+	Usuario existeUsuario(@Param("credenciais") Credenciais credenciais);
 	
 }

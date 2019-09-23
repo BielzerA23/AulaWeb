@@ -1,5 +1,6 @@
 package br.com.bandtec.AgendaDeObjetivos.domain;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,44 +15,35 @@ public class Usuario {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	@Embedded
+	private Credenciais credenciais;
+	
+	private String nome;
+	private Integer idade;
 
-	@JsonProperty
-	private String login;
-
-	@JsonProperty
-	private String senha;
-
-	public Usuario(String login, String senha) {
-		this.login = login;
-		this.senha = senha;
+	public Usuario(String nome, Integer idade) {
+		this.nome = nome;
+		this.idade = idade;
 	}
 
-	public Usuario() {
+	public String getNome() {
+		return nome;
 	}
 
-	public Long getId() {
-		return id;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public Integer getIdade() {
+		return idade;
 	}
 
-	public String getLogin() {
-		return login;
+	public void setIdade(Integer idade) {
+		this.idade = idade;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+	
 
 	
 	

@@ -20,6 +20,10 @@ public class LoginController {
 	@Autowired
 	private TodosUsuarios todosUsuarios;
 
+	public LoginController(TodosUsuarios todosusuarios) {
+		this.todosUsuarios = todosusuarios;
+	}
+
 	@PostMapping("/usuarios")
 	public ResponseEntity<String> cadastrarUsuario(@RequestBody Usuario usuario) {
 		todosUsuarios.save(usuario);
